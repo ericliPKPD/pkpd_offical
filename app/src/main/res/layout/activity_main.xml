@@ -30,7 +30,8 @@
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf=""
         app:layout_constraintStart_toStartOf="@+id/topPanel"
-        tools:layout_editor_absoluteY="40dp">
+        tools:layout_editor_absoluteY="40dp"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.search.SearchBar
             android:id="@+id/search_bar"
