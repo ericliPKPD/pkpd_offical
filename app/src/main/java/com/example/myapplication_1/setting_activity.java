@@ -2,6 +2,8 @@ package com.example.myapplication_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +16,9 @@ public class setting_activity extends AppCompatActivity {
 
     Switch night_switch;
     Button back_btn;
+    Button info_btn;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,7 @@ public class setting_activity extends AppCompatActivity {
 
         // initialize variable (backward button)
         back_btn = (Button) findViewById(R.id.cancel_button);
+        info_btn = (Button) findViewById(R.id.info_button);
 
         // clicked
         back_btn.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +34,15 @@ public class setting_activity extends AppCompatActivity {
             public void onClick(View v) {
                 // jump from setting page to home page
                 Intent settings = new Intent(setting_activity.this, activity_main.class);
+                startActivity(settings);
+            }
+        });
+
+        info_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // jump from setting page to home page
+                Intent settings = new Intent(setting_activity.this, information_setting.class);
                 startActivity(settings);
             }
         });
