@@ -1,4 +1,4 @@
-package com.example.recyclerview_product;
+package com.example.myapplication_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 

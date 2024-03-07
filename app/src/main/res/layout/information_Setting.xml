@@ -50,7 +50,7 @@
             android:text="This is a project built for CCIT4080 and are only uesd for such propses, thank you"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="301dp" />
+            tools:layout_editor_absoluteY="301dp"/>
     </LinearLayout>
 
     <LinearLayout
