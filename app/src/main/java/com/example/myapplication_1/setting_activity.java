@@ -10,15 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 
-import com.google.android.material.switchmaterial.SwitchMaterial;
-
 public class setting_activity extends AppCompatActivity {
 
     Switch night_switch;
     Button back_btn;
     Button info_btn;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +40,7 @@ public class setting_activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // jump from setting page to home page
-                Intent settings = new Intent(setting_activity.this, information_setting.class);
+                Intent settings = new Intent(setting_activity.this, information.class);
                 startActivity(settings);
             }
         });

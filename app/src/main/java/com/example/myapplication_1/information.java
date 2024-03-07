@@ -1,13 +1,12 @@
 package com.example.myapplication_1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class information_setting extends AppCompatActivity {
+public class information extends AppCompatActivity {
 
     Button back_btn;
     @Override
@@ -22,7 +21,7 @@ public class information_setting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // jump from setting page to home page
-                Intent settings = new  Intent(information_setting.this, setting_activity.class);
+                Intent settings = new  Intent(information.this, setting_activity.class);
                 startActivity(settings);
             }
         });

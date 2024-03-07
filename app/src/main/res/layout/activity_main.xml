@@ -23,26 +23,22 @@
             android:textStyle="bold"/>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/search_edit_frame"
-        app:layout_constraintTop_toBottomOf="@+id/topPanel"
-        android:layout_toEndOf="@+id/topPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
     <com.google.android.material.search.SearchBar
-        android:layout_centerVertical="true"
-        android:queryHint="Search Products"
+        android:layout_marginTop="5dp"
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:gravity="center_vertical"
-        android:background="@drawable/round_black_white10_20"
-        android:backgroundTint="@color/night_mode"
         android:orientation="vertical"
         android:padding="15dp"
-        tools:ignore="ExtraText,MissingConstraints"/>
-    </RelativeLayout>
+        android:queryHint="Search Products"
+        android:src="@drawable/baseline_search_24"
+        app:layout_constraintBaseline_toBottomOf="@id/topPanel"
+        tools:ignore="ExtraText,MissingConstraints"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="45dp" />
 
     <RelativeLayout
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
@@ -51,14 +47,12 @@
         android:layout_height="600dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_edit_frame">
+        app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_item"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="46dp"
+            android:layout_height="551dp"
             android:foregroundGravity="center_vertical"
             android:paddingTop="?attr/actionBarSize" />
 
@@ -68,8 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="22dp"
-            android:layout_marginBottom="74dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="60dp"
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />
