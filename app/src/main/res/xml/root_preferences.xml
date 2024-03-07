@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Basic Settings">
+    <SwitchPreference
+        app:key="switch"
+        app:title="NightMode"
+        app:summary="Click to switch on or off"
+        app:defaultValue="False"/>
+
+    <SwitchPreference
+        app:key="switch"
+        app:title="Notification"
+        app:summary="Click to switch on or off"
+        app:defaultValue="False"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="UI Setting">
+    <ListPreference
+        app:dialogTitle="Select duration"
+        app:key="list"
+        app:entries="@array/settings_list_preference_titles"
+        app:entryValues="@array/settings_list_preference_values"
+        app:summary="Click to show a list to choose the font size"
+        app:title="Font Size" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
