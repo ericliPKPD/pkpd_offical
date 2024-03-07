@@ -20,25 +20,30 @@
             android:text="Home Page"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 
 
-    <com.google.android.material.search.SearchBar
-        android:layout_marginTop="5dp"
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="15dp"
-        android:queryHint="Search Products"
-        android:src="@drawable/baseline_search_24"
-        app:layout_constraintBaseline_toBottomOf="@id/topPanel"
-        tools:ignore="ExtraText,MissingConstraints"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="45dp" />
+    <RelativeLayout
+        android:id="@+id/search_block"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf=""
+        app:layout_constraintStart_toStartOf="@+id/topPanel"
+        tools:layout_editor_absoluteY="40dp">
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:queryHint="Search Products"
+            android:src="@drawable/baseline_search_24"
+            tools:ignore="ExtraText,MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="45dp" />
+    </RelativeLayout>
 
     <RelativeLayout
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
@@ -67,6 +72,7 @@
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />
+
     </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -105,4 +111,6 @@
             android:layout_gravity="right"
             android:text="Settings"/>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
