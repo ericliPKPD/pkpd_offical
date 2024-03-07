@@ -16,7 +16,7 @@ public class information extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.Information_Setting);
+        setContentView(R.layout.information_setting);
 
         // initialize variable (backward button)
         back_btn = (Button) findViewById(R.id.cancel_button);

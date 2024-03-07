@@ -20,32 +20,28 @@
             android:text="Home Page"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/search_edit_frame"
         app:layout_constraintTop_toBottomOf="@+id/topPanel"
-        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/topPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <SearchView
+    <com.google.android.material.search.SearchBar
         android:layout_centerVertical="true"
         android:queryHint="Search Products"
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:gravity="center"
-        android:layout_marginEnd="20dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
         android:background="@drawable/round_black_white10_20"
         android:backgroundTint="@color/night_mode"
         android:orientation="vertical"
         android:padding="15dp"
-        tools:ignore="ExtraText,MissingConstraints">>
-    </SearchView>
+        tools:ignore="ExtraText,MissingConstraints"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -62,8 +58,7 @@
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="46dp"
             android:foregroundGravity="center_vertical"
             android:paddingTop="?attr/actionBarSize" />
 
@@ -73,8 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="74dp"
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />
@@ -95,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
-            android:layout_gravity="left_vertical"
+            android:layout_gravity="left"
             android:layout_marginStart="5dp"/>
 
         <Button
@@ -115,6 +110,5 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="Settings"/>
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>
