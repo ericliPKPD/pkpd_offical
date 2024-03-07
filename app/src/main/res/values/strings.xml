@@ -18,4 +18,6 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="settings">Settings</string>
     <string name="version_1_0">Version 1.0</string>
+    <string name="information">Information</string>
+    <string name="this_is_a_project_built_for_ccit4080_and_are_only_uesd_for_such_propses_thank_you">This is a project built for CCIT4080 and are only uesd for such propses, thank you</string>
 </resources>
