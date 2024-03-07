@@ -16,13 +16,13 @@ public class information_setting extends AppCompatActivity {
         setContentView(R.layout.information);
 
         // initialize variable (backward button)
-        back_btn = (Button) findViewById(R.id.cancel_button);
+        back_btn = findViewById(R.id.cancel_button);
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // jump from setting page to home page
-                Intent settings = new Intent(information_setting.this, setting_activity.class);
+                Intent settings = new  Intent(information_setting.this, setting_activity.class);
                 startActivity(settings);
             }
         });

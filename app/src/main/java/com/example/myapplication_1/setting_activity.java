@@ -24,11 +24,11 @@ public class setting_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        // initialize variable (backward button)
+        // initialize variable (backward/information page button)
         back_btn = (Button) findViewById(R.id.cancel_button);
         info_btn = (Button) findViewById(R.id.info_button);
 
-        // clicked
+        // Button for back to main page
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +38,7 @@ public class setting_activity extends AppCompatActivity {
             }
         });
 
+        // Button for information page
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
