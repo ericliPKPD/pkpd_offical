@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements SelectListener {
+public class activity_main extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddPage.class);
+                Intent intent = new Intent(activity_main.this, AddPage.class);
                 startActivity(intent);
             }
         });
 
-        dbOperation = new DbOperation(MainActivity.this);
+        dbOperation = new DbOperation(activity_main.this);
         pid = new ArrayList<>();
         pname = new ArrayList<>();
         pprice = new ArrayList<>();
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
 
         getdatainarray();
 
-        productAdapter = new ProductAdapter(MainActivity.this, pid, pname, pprice, pfromshop, this);
+        productAdapter = new ProductAdapter(activity_main.this, pid, pname, pprice, pfromshop, this);
         recyclerView.setAdapter(productAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity_main.this));
 
     }
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(MainActivity.this, ProductDetil.class);
+        Intent intent = new Intent(activity_main.this, ProductDetil.class);
 
         intent.putExtra("Product ID", String.valueOf(pid.get(position)));
         intent.putExtra("Product Name", String.valueOf(pname.get(position)));
