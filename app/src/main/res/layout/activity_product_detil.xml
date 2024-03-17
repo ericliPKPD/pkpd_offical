@@ -6,6 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ProductDetil">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:background="@drawable/back_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@android:string/cancel"
+            android:padding="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Product details"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/Prod_Name2"
         android:layout_width="296dp"

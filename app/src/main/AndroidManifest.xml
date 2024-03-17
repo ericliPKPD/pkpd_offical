@@ -17,6 +17,17 @@
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
+            android:name=".ProductDetil"
+            android:exported="false" />
+        <activity
+            android:name=".information"
+            android:exported="false" />
+        <activity
+            android:name=".AddPage"
+            android:exported="false"
+            android:label="AddPage"
+            android:parentActivityName=".AddPage" />
+        <activity
             android:name=".activity_main"
             android:exported="true">
             <intent-filter>

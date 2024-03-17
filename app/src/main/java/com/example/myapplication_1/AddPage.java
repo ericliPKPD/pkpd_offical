@@ -2,6 +2,7 @@ package com.example.myapplication_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ public class AddPage extends AppCompatActivity {
 
     EditText etx_name, etx_price, etx_fromshop;
     Button addbutton;
+    Button back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class AddPage extends AppCompatActivity {
         etx_price = findViewById(R.id.etx_price);
         etx_fromshop = findViewById(R.id.etx_fromshop);
 
+        back_btn = (Button) findViewById(R.id.cancel_button);
         addbutton = findViewById(R.id.addindb);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +32,17 @@ public class AddPage extends AppCompatActivity {
                 operation.add_in(etx_name.getText().toString().trim(),
                         Integer.valueOf(etx_price.getText().toString().trim()) ,
                         etx_fromshop.getText().toString().trim());
+                etx_name.getText().clear();
+                etx_price.getText().clear();
+                etx_fromshop.getText().clear();
+            }
+        });
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settings = new Intent(AddPage.this, activity_main.class);
+                startActivity(settings);
             }
         });
     }
