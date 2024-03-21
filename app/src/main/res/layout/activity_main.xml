@@ -87,6 +87,7 @@
         android:background="@color/primary">
 
         <Button
+            android:id="@+id/home"
             android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
