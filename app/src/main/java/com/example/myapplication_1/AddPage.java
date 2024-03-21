@@ -23,7 +23,7 @@ public class AddPage extends AppCompatActivity {
         etx_price = findViewById(R.id.etx_price);
         etx_fromshop = findViewById(R.id.etx_fromshop);
 
-        back_btn = (Button) findViewById(R.id.cancel_button);
+        btw_button = (Button) findViewById(R.id.cancel_button);
         addbutton = findViewById(R.id.addindb);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
