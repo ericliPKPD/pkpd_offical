@@ -4,80 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    tools:context=".AddPage"
+    android:padding="24dp">
 
-    <RelativeLayout
-        android:id="@+id/topPanel"
+    <LinearLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:background="@color/primary"
         tools:ignore="MissingConstraints">
 
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back_btn"
+            android:contentDescription="@android:string/cancel"
+            android:padding="14dp" />
+
         <TextView
+            android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Note Page"
+            android:text="Add page"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
-    </RelativeLayout>
+    </LinearLayout>
 
-
-    <RelativeLayout
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
-        android:id="@+id/view_block"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:orientation="vertical"
+    <EditText
+        android:id="@+id/etx_pname"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Product Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_item"
-            android:layout_width="match_parent"
-            android:layout_height="551dp"
-            android:foregroundGravity="center_vertical"
-            android:paddingTop="?attr/actionBarSize" /
-
-    </RelativeLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/primary">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home"
-            android:layout_gravity="left"
-            android:layout_marginStart="5dp"/>
 
-        <Button
-            android:id="@+id/Note"
-            android:layout_marginRight="5dp"
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Note"/>
+    <EditText
+        android:id="@+id/etx_price"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Product Price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etx_pname" />
 
-        <Button
-            android:id="@+id/settings"
-            android:layout_marginLeft="5dp"
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="Settings"/>
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    <EditText
+        android:id="@+id/etx_fromshop"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="From shop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etx_price" />
 
+    <Button
+        android:id="@+id/addindb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="ADD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etx_fromshop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
