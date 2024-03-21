@@ -12,7 +12,7 @@ public class AddPage extends AppCompatActivity {
 
     EditText etx_name, etx_price, etx_fromshop;
     Button addbutton;
-    Button back_btn;
+    Button btw_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,14 @@ public class AddPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent settings = new Intent(AddPage.this, activity_main.class);
                 startActivity(settings);
+            }
+        });
+
+        btw_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(AddPage.this, activity_main.class);
+                startActivity(back);
             }
         });
     }
