@@ -23,6 +23,7 @@ public class activity_main extends AppCompatActivity implements SelectListener {
     ProductAdapter productAdapter;
 
     Button btn1;
+    Button btn2;
 
 
     @Override
@@ -32,6 +33,7 @@ public class activity_main extends AppCompatActivity implements SelectListener {
 
         // initialize variable (backward button)
         btn1 = (Button) findViewById(R.id.settings);
+        btn2 = (Button) findViewById(R.id.Note);
         recyclerView = findViewById(R.id.list_item);
         add_button = findViewById(R.id.Add);
 
@@ -40,6 +42,15 @@ public class activity_main extends AppCompatActivity implements SelectListener {
             public void onClick(View v) {
                 // jump from setting page to home page
                 Intent settings = new Intent(activity_main.this, setting_activity.class);
+                startActivity(settings);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // jump from setting page to home page
+                Intent settings = new Intent(activity_main.this, note_page.class);
                 startActivity(settings);
             }
         });
