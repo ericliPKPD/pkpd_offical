@@ -22,7 +22,7 @@ public class note_page extends AppCompatActivity implements SelectListener {
     ProductAdapter productAdapter;
 
     Button btn1;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,3 +40,17 @@ public class note_page extends AppCompatActivity implements SelectListener {
                 startActivity(settings);
             }
         });
+    }
+
+    public void onItemClick(int position) {
+        Intent intent = new Intent(note_page.this, ProductDetil.class);
+
+        intent.putExtra("Product ID", String.valueOf(pid.get(position)));
+        intent.putExtra("Product Name", String.valueOf(pname.get(position)));
+        intent.putExtra("Product Price", String.valueOf(pprice.get(position)));
+        intent.putExtra("Product From Shop", String.valueOf(pfromshop.get(position)));
+
+        startActivity(intent);
+
+    }
+}

@@ -7,17 +7,18 @@
     tools:context=".ProductDetil">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/primary">
 
         <Button
             android:id="@+id/cancel_button"
-            android:background="@drawable/back_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:background="@drawable/back_btn"
             android:contentDescription="@android:string/cancel"
-            android:padding="14dp"/>
+            android:padding="14dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,4 +60,53 @@
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/Prod_Name2"
         app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+
+    <RelativeLayout
+        android:id="@+id/Add_view"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/FromShop2">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/Add"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="297dp"
+            android:layout_marginBottom="420dp"
+            android:clickable="true"
+            android:contentDescription="@android:string/copy"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/Add"
+            android:layout_alignEnd="@+id/Add"
+            android:layout_alignBottom="@+id/Add"
+            android:layout_marginStart="87dp"
+            android:layout_marginEnd="-225dp"
+            android:layout_marginBottom="3dp"
+            android:text="Compare more with other products..."
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_item"
+            android:layout_width="match_parent"
+            android:layout_height="364dp"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="23dp"
+            android:foregroundGravity="center_vertical"
+            android:paddingTop="?attr/actionBarSize" />
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
