@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary">
+        android:background="@color/primary"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/cancel_button"

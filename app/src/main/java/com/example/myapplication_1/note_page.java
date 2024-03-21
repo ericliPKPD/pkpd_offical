@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class note_page extends AppCompatActivity implements SelectListener {
+public abstract class note_page extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     DbOperation dbOperation;
@@ -28,18 +28,9 @@ public class note_page extends AppCompatActivity implements SelectListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_page);
 
-        // initialize variable (backward button)
-        btn1 = (Button) findViewById(R.id.settings);
-        recyclerView = findViewById(R.id.list_item);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // jump from setting page to home page
-                Intent settings = new Intent(note_page.this, setting_activity.class);
-                startActivity(settings);
-            }
-        });
+    }
+}
     }
 
     public void onItemClick(int position) {
