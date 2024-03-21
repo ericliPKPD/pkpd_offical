@@ -13,3 +13,12 @@ import android.widget.Button;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+
+public class activity_main extends AppCompatActivity implements SelectListener {
+
+    RecyclerView recyclerView;
+    DbOperation dbOperation;
+    ArrayList<String> pid, pname, pprice, pfromshop;
+    ProductAdapter productAdapter;
+
+    Button btn1;
