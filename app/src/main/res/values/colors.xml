@@ -11,7 +11,7 @@
 
     <color name="primary">#1B023B</color>
     <color name="secondary">#FF03DAC5</color>
-
+    <color name="lavender">#8692f7</color>
     <color name="night_mode">#6124B1</color>
     <color name="notifications">#13B2C3</color>
 </resources>

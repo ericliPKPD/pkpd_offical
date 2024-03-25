@@ -28,6 +28,10 @@
             android:label="AddPage"
             android:parentActivityName=".AddPage" />
         <activity
+            android:name=".searchPage"
+            android:exported="false"
+            android:label="Searching"/>
+        <activity
             android:name=".activity_main"
             android:exported="true">
             <intent-filter>

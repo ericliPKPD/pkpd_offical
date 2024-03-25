@@ -29,6 +29,7 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
         setContentView(R.layout.note_page);
 
 
+<<<<<<< Updated upstream
     }
 }
     }
@@ -45,3 +46,15 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
 
     }
 }
+=======
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // jump from setting page to home page
+                Intent settings = new Intent(note_page.this, setting_activity.class);
+                startActivity(settings);
+            }
+        });
+    }
+}
+>>>>>>> Stashed changes

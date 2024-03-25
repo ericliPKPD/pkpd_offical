@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.search.SearchBar;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,8 @@ public class activity_main extends AppCompatActivity implements SelectListener {
     Button btn1;
     Button btn2;
 
+    SearchBar search;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class activity_main extends AppCompatActivity implements SelectListener {
         btn2 = (Button) findViewById(R.id.Note);
         recyclerView = findViewById(R.id.list_item);
         add_button = findViewById(R.id.Add);
+        search = findViewById(R.id.search_bar);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +66,18 @@ public class activity_main extends AppCompatActivity implements SelectListener {
                 startActivity(intent);
             }
         });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity_main.this, searchPage.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
 
         dbOperation = new DbOperation(activity_main.this);
         pid = new ArrayList<>();
