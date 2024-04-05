@@ -22,10 +22,8 @@ public class activity_main extends AppCompatActivity implements SelectListener {
     DbOperation dbOperation;
     ArrayList<String> pid, pname, pprice, pfromshop;
     ProductAdapter productAdapter;
-
     Button btn1;
     Button btn2;
-
     SearchBar search;
 
 

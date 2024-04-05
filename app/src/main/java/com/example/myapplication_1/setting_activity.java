@@ -46,7 +46,6 @@ public class setting_activity extends AppCompatActivity {
 
         // initialize variable (night mode switch)
         night_switch = findViewById(R.id.night_mode_switch);
-
         night_switch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
