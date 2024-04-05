@@ -52,8 +52,8 @@ public class activity_main extends AppCompatActivity implements SelectListener {
             @Override
             public void onClick(View v) {
                 // jump from setting page to home page
-                Intent settings = new Intent(activity_main.this, note_page.class);
-                startActivity(settings);
+                Intent note = new Intent(activity_main.this, note_page.class);
+                startActivity(note);
             }
         });
 

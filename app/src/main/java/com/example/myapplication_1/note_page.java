@@ -44,8 +44,8 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
             @Override
             public void onClick(View v) {
                 // jump from setting page to home page
-                Intent settings = new Intent(note_page.this, activity_main.class);
-                startActivity(settings);
+                Intent main_page = new Intent(note_page.this, activity_main.class);
+                startActivity(main_page);
             }
         });
 
