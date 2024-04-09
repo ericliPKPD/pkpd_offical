@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.search.SearchBar;
@@ -72,6 +73,7 @@ public class activity_main extends AppCompatActivity implements SelectListener {
             public void onClick(View v) {
                 Intent intent = new Intent(activity_main.this, searchPage.class);
                 startActivity(intent);
+                Toast.makeText(MainActivity.this, "Here is the search function", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -31,6 +31,9 @@
             android:name=".searchPage"
             android:exported="false"
             android:label="Searching"/>
+        <activity android:name=".search_addpage"
+            android:exported="false"
+            android:label="Add shop data"/>
         <activity
             android:name=".activity_main"
             android:exported="true">

@@ -13,6 +13,18 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         />
     <item android:title="Home page"
-        android:id="@+id/cancel_back"
+        android:id="@+id/cancel_back2"
         />
+    <item
+        android:title="Filter"
+        android:id="@+id/filter"
+        android:icon="@drawable/baseline_filter_list_24"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/add_data"
+        android:title="Add shop data"/>
+
+    <item android:id="@+id/fun_sorting"
+        android:icon="@drawable/baseline_sort_24"
+        android:title="Sorting"/>
 </menu>
