@@ -82,12 +82,12 @@ public boolean onMenuItemClick(@NonNull MenuItem item) {
         Cursor cursor = null;
         String querySql= null;
         if(i==0) {
-                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME ASC";
+                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME COLLATE NOCASE ASC";
                 i=1;
                 Toast.makeText(searchPage.this, "Ascending order", Toast.LENGTH_SHORT).show();
         }
         else {
-                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME DESC";
+                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME COLLATE NOCASE DESC";
                 Toast.makeText(searchPage.this, "Descending order", Toast.LENGTH_SHORT).show();
                 i=0;
         }
