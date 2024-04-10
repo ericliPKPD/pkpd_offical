@@ -20,19 +20,40 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
     DbOperation dbOperation;
     ArrayList<String> pid, pname, pprice, pfromshop;
     ProductAdapter productAdapter;
-
     Button btn1;
+    Button btn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.note_page);
 
+        btn1 = (Button) findViewById(R.id.settings);
+        btn2 = (Button) findViewById(R.id.Note);
 
-<<<<<<< Updated upstream
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // jump from setting page to home page
+                Intent settings = new Intent(note_page.this, setting_activity.class);
+                startActivity(settings);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // jump from setting page to home page
+                Intent main_page = new Intent(note_page.this, activity_main.class);
+                startActivity(main_page);
+            }
+        });
+
+
+    <<<<<<< Updated upstream;
+        }
     }
-}
-    }
+        }
 
     public void onItemClick(int position) {
         Intent intent = new Intent(note_page.this, ProductDetil.class);

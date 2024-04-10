@@ -5,6 +5,9 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="setting_activity">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
