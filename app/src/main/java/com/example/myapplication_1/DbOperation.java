@@ -55,7 +55,7 @@ public class DbOperation extends SQLiteOpenHelper {
     }
 
     Cursor readAllData(){
-        String read_query = "SELECT * FROM " + TABLE_NAME;
+        String read_query = "SELECT * FROM " + TABLE_NAME + " ORDER BY PRICE";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = null;

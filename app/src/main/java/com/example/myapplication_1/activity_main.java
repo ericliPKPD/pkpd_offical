@@ -76,9 +76,6 @@ public class activity_main extends AppCompatActivity implements SelectListener {
         });
 
 
-
-
-
         dbOperation = new DbOperation(activity_main.this);
         pid = new ArrayList<>();
         pname = new ArrayList<>();

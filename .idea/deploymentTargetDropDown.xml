@@ -2,7 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="activity_main">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="searchPage">
+        <State />
+      </entry>
+      <entry key="search_addpage">
         <State />
       </entry>
       <entry key="setting_activity">
