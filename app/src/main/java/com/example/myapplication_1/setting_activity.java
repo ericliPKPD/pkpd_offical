@@ -20,9 +20,12 @@ public class setting_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        // initialize variable (backward/information page button)
+
+        // initialize variable
         back_btn = (Button) findViewById(R.id.cancel_button);
         info_btn = (Button) findViewById(R.id.info_button);
+        night_switch = findViewById(R.id.night_mode_switch);
+
 
         // Button for back to main page
         back_btn.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +47,7 @@ public class setting_activity extends AppCompatActivity {
             }
         });
 
-        // initialize variable (night mode switch)
-        night_switch = findViewById(R.id.night_mode_switch);
+        // Switch for turn on night mode
         night_switch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -71,12 +71,9 @@ public class activity_main extends AppCompatActivity implements SelectListener {
             public void onClick(View v) {
                 Intent intent = new Intent(activity_main.this, searchPage.class);
                 startActivity(intent);
-                Toast.makeText(MainActivity.this, "Here is the search function", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_main.this, "Here is the search function", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
 
 
         dbOperation = new DbOperation(activity_main.this);
