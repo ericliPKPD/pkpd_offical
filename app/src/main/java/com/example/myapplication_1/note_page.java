@@ -49,12 +49,31 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
             }
         });
 
+        dbOperation = new DbOperation(note_page.this);
+        pid = new ArrayList<>();
+        pname = new ArrayList<>();
+        pprice = new ArrayList<>();
+        pfromshop = new ArrayList<>();
 
-    <<<<<<< Updated upstream;
+        getdatainarray();
+
+        productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop, this);
+        recyclerView.setAdapter(productAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(note_page.this));
+
+    }
+
+    void getdatainarray() {
+        Cursor cursor = dbOperation.readAllData();
+        while (cursor.moveToNext()) {
+            pid.add(cursor.getString(0));
+            pname.add(cursor.getString(1));
+            pprice.add(cursor.getString(2));
+            pfromshop.add(cursor.getString(3));
         }
     }
-        }
 
+    @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(note_page.this, ProductDetil.class);
 
@@ -64,18 +83,5 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
         intent.putExtra("Product From Shop", String.valueOf(pfromshop.get(position)));
 
         startActivity(intent);
-
     }
 }
-=======
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // jump from setting page to home page
-                Intent settings = new Intent(note_page.this, setting_activity.class);
-                startActivity(settings);
-            }
-        });
-    }
-}
->>>>>>> Stashed changes
