@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@drawable/background_white">
 
     <RelativeLayout
         android:id="@+id/topPanel"
@@ -70,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home"
+            android:textColor="@color/black"
             android:layout_gravity="left"
             android:layout_marginStart="5dp"/>
 
@@ -80,7 +81,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Note"/>
+            android:text="Note"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/settings"
@@ -89,7 +91,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Settings"/>
+            android:text="Settings"
+            android:textColor="@color/black"/>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <com.google.android.material.search.SearchBar
