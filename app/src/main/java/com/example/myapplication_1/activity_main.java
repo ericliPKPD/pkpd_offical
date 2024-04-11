@@ -22,6 +22,7 @@ public class activity_main extends AppCompatActivity implements SelectListener {
     FloatingActionButton add_button;
     DbOperation dbOperation;
     ArrayList<String> pid, pname, pprice, pfromshop;
+    ArrayList<Integer> integerArrayList;
     ProductAdapter productAdapter;
     Button btn1;
     Button btn2;
@@ -81,10 +82,16 @@ public class activity_main extends AppCompatActivity implements SelectListener {
         pname = new ArrayList<>();
         pprice = new ArrayList<>();
         pfromshop = new ArrayList<>();
+        integerArrayList = new ArrayList<>();
+        integerArrayList.add(R.drawable.sample_image_sp);
+        integerArrayList.add(R.drawable.sample_image_sp);
+        integerArrayList.add(R.drawable.sample_image_sp);
+        integerArrayList.add(R.drawable.sample_image_sp);
+        integerArrayList.add(R.drawable.sample_image_sp);
 
         getdatainarray();
 
-        productAdapter = new ProductAdapter(activity_main.this, pid, pname, pprice, pfromshop, this);
+        productAdapter = new ProductAdapter(activity_main.this, pid, pname, pprice, pfromshop, integerArrayList, this);
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity_main.this));
 
@@ -92,11 +99,13 @@ public class activity_main extends AppCompatActivity implements SelectListener {
 
     void getdatainarray() {
         Cursor cursor = dbOperation.readAllData();
-        while (cursor.moveToNext()) {
+        int count = 4;
+        while (cursor.moveToNext() && count != 0) {
             pid.add(cursor.getString(0));
             pname.add(cursor.getString(1));
             pprice.add(cursor.getString(2));
             pfromshop.add(cursor.getString(3));
+            count = count -1;
         }
     }
 
