@@ -35,6 +35,8 @@
         <activity android:name=".search_addpage"
             android:exported="false"
             android:label="Add shop data"/>
+        <activity android:name=".note_page"
+            android:exported="false"/>
         <activity
             android:name=".activity_main"
             android:exported="true">
