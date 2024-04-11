@@ -30,7 +30,8 @@
         <activity
             android:name=".searchPage"
             android:exported="false"
-            android:label="Searching"/>
+            android:label="Searching"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".search_addpage"
             android:exported="false"
             android:label="Add shop data"/>
