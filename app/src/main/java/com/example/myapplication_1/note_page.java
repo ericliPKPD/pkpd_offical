@@ -57,7 +57,7 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
 
         getdatainarray();
 
-        productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop, this);
+        productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop, null,this);
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(note_page.this));
 
