@@ -29,6 +29,7 @@
             android:parentActivityName=".AddPage" />
         <activity
             android:name=".searchPage"
+            android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="false"
             android:label="Searching"/>
         <activity android:name=".search_addpage"
