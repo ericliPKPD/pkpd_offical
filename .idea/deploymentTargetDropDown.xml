@@ -5,16 +5,7 @@
       <entry key="activity_main">
         <State />
       </entry>
-      <entry key="app">
-        <State />
-      </entry>
-      <entry key="searchPage">
-        <State />
-      </entry>
-      <entry key="search_addpage">
-        <State />
-      </entry>
-      <entry key="setting_activity">
+      <entry key="note_page">
         <State />
       </entry>
     </value>

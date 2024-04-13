@@ -4,11 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -16,21 +19,37 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
 
     private Context ctx;
     private ArrayList pid, pname, pprice, pfromshop;
-    private  SelectListener listener;
+    private ArrayList<Integer> integerArrayList;
+    private SelectListener listener;
+    int index;
 
+    ProductAdapter(Context ctx, ArrayList pid, ArrayList pname, ArrayList pprice, ArrayList pfromshop, ArrayList<Integer> integerArrayList, SelectListener listener){
+        this.ctx = ctx;
+        this.pid = pid;
+        this.pname = pname;
+        this.pprice = pprice;
+        this.pfromshop = pfromshop;
+        this.integerArrayList = integerArrayList;
+        this.listener = listener;
+        this.index = 1; // 1 for row with photo
+    }
     ProductAdapter(Context ctx, ArrayList pid, ArrayList pname, ArrayList pprice, ArrayList pfromshop, SelectListener listener){
         this.ctx = ctx;
         this.pid = pid;
         this.pname = pname;
         this.pprice = pprice;
         this.pfromshop = pfromshop;
+        this.integerArrayList = null;
         this.listener = listener;
+        this.index = 0; // 0 for row without photo
     }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ctx);
-        View v = inflater.inflate(R.layout.a_row, parent, false);
+        View v = null;
+        if (index == 1) {v = inflater.inflate(R.layout.a_row, parent, false);}
+        if (index == 0) {v = inflater.inflate(R.layout.a_row_note, parent, false);}
         return new MyViewHolder(v);
     }
 
@@ -41,6 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         holder.tx_price.setText(String.valueOf(pprice.get(position)));
         holder.tx_fromshop.setText(String.valueOf(pfromshop.get(position)));
 
+        if (index == 1) {Glide.with(ctx).load(integerArrayList.get(position)).into(holder.imageView);}
     }
 
     @Override
@@ -51,6 +71,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tx_id, tx_name, tx_price, tx_fromshop;
+        ImageView imageView;
         CardView product;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -59,6 +80,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
             tx_name = itemView.findViewById(R.id.Prod_Name);
             tx_price = itemView.findViewById(R.id.Prod_Price);
             tx_fromshop = itemView.findViewById(R.id.FromShop);
+            imageView = itemView.findViewById(R.id.Ad_image);
             product = itemView.findViewById(R.id.Product);
 
             itemView.setOnClickListener(new View.OnClickListener() {

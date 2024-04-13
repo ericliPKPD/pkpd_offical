@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
+import android.view.View;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -160,7 +162,29 @@ public  class searchPage extends AppCompatActivity {
 
                         return false;
                         }
-                        });
+        });
+
+                lvContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                // Move the cursor to the position of the clicked item
+                                Cursor cursor = (Cursor) Adapter.getItem(position);
+                                if (getIntent().getIntExtra("com", 0) == 1){
+                                        Intent result = new Intent();
+                                        result.putExtra("Product Name", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_NAME)));
+                                        result.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
+                                        result.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
+                                        setResult(RESULT_OK, result);
+                                        finish();
+                                } else {
+                                        Intent intent = new Intent(searchPage.this, ProductDetil.class);
+                                        intent.putExtra("Product Name", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_NAME)));
+                                        intent.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
+                                        intent.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
+                                        startActivity(intent);
+                                }
+                        }
+                });
 
                         return false;
                         }
