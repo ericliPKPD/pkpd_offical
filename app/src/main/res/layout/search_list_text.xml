@@ -9,4 +9,5 @@
     android:textColor="@color/lavender"
     android:textSize="20sp"
     android:gravity="center_vertical"
-    android:padding="12dp"/>
+    android:padding="12dp"
+    android:background="@color/background_white"/>

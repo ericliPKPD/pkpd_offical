@@ -76,6 +76,7 @@ public class setting_activity extends AppCompatActivity {
             public void onClick(View view){
                 if (night_switch.isChecked()){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
                 } else {
                   AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 }
