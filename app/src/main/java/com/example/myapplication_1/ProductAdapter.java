@@ -20,7 +20,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
     private Context ctx;
     private ArrayList pid, pname, pprice, pfromshop;
     private ArrayList<Integer> integerArrayList;
-    private  SelectListener listener;
+    private SelectListener listener;
+    int index;
 
     ProductAdapter(Context ctx, ArrayList pid, ArrayList pname, ArrayList pprice, ArrayList pfromshop, ArrayList<Integer> integerArrayList, SelectListener listener){
         this.ctx = ctx;
@@ -30,12 +31,25 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         this.pfromshop = pfromshop;
         this.integerArrayList = integerArrayList;
         this.listener = listener;
+        this.index = 1; // 1 for row with photo
+    }
+    ProductAdapter(Context ctx, ArrayList pid, ArrayList pname, ArrayList pprice, ArrayList pfromshop, SelectListener listener){
+        this.ctx = ctx;
+        this.pid = pid;
+        this.pname = pname;
+        this.pprice = pprice;
+        this.pfromshop = pfromshop;
+        this.integerArrayList = null;
+        this.listener = listener;
+        this.index = 0; // 0 for row without photo
     }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ctx);
-        View v = inflater.inflate(R.layout.a_row, parent, false);
+        View v = null;
+        if (index == 1) {v = inflater.inflate(R.layout.a_row, parent, false);}
+        if (index == 0) {v = inflater.inflate(R.layout.a_row_note, parent, false);}
         return new MyViewHolder(v);
     }
 
@@ -46,8 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         holder.tx_price.setText(String.valueOf(pprice.get(position)));
         holder.tx_fromshop.setText(String.valueOf(pfromshop.get(position)));
 
-        Glide.with(ctx).load(integerArrayList.get(position)).into(holder.imageView);
-
+        if (index == 1) {Glide.with(ctx).load(integerArrayList.get(position)).into(holder.imageView);}
     }
 
     @Override

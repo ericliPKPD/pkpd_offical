@@ -31,10 +31,13 @@
             android:name=".searchPage"
             android:theme="@style/Theme.AppCompat.DayNight"
             android:exported="false"
-            android:label="Searching"/>
+            android:label="Searching"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".search_addpage"
             android:exported="false"
             android:label="Add shop data"/>
+        <activity android:name=".note_page"
+            android:exported="false"/>
         <activity
             android:name=".activity_main"
             android:exported="true">
