@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddPage extends AppCompatActivity {
 
@@ -35,7 +36,7 @@ public class AddPage extends AppCompatActivity {
                 etx_name.getText().clear();
                 etx_price.getText().clear();
                 etx_fromshop.getText().clear();
-                //Toast.makeText(getApplicationContext(), "Item added", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Item added", Toast.LENGTH_LONG).show();
             }
         });
 

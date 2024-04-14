@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public abstract class note_page extends AppCompatActivity implements SelectListener {
+public class note_page extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     DbOperation dbOperation;
@@ -29,7 +29,8 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
         setContentView(R.layout.note_page);
 
         btn1 = (Button) findViewById(R.id.settings);
-        btn2 = (Button) findViewById(R.id.Note);
+        btn2 = (Button) findViewById(R.id.home);
+        recyclerView = findViewById(R.id.list_item);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +58,7 @@ public abstract class note_page extends AppCompatActivity implements SelectListe
 
         getdatainarray();
 
-        productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop, null,this);
+        productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop,this);
         recyclerView.setAdapter(productAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(note_page.this));
 

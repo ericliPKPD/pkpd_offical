@@ -133,16 +133,16 @@
 
                 <!--setup notification switch-->
                 <Switch
-                    android:id="@+id/notification_main_column"
+                    android:id="@+id/mode_switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:checked="false"
-                    android:clickable="true"
-                    android:contentDescription="@string/settings"
                     android:switchMinWidth="40dp"
+                    app:layout_constraintWidth_percent="0.5"
                     tools:ignore="TouchTargetSizeCheck" />
             </RelativeLayout>
 
