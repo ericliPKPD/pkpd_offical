@@ -156,38 +156,12 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/round_block_white10_20"
             android:backgroundTint="#4DBB86FC"
-            android:orientation="vertical"
-            android:padding="15dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:text="Font Size"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/font_size"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
-                    android:background="@drawable/baseline_arrow_forward_24"
-                    android:contentDescription="@android:string/untitled" />
-            </RelativeLayout>
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="0dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -205,7 +179,7 @@
                     android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginEnd="20dp"
                     android:background="@drawable/baseline_arrow_forward_24"
                     android:contentDescription="@android:string/untitled" />
             </RelativeLayout>
