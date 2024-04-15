@@ -31,6 +31,18 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/Prod_Name"
+        android:layout_width="296dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="70dp"
+        android:text="Product Name:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/Prod_Name2"
         android:layout_width="296dp"
         android:layout_height="62dp"
@@ -40,6 +52,18 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:text="Price: "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/Prod_Price2"
+        app:layout_constraintStart_toStartOf="@+id/Prod_Name2"
+        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
 
     <TextView
         android:id="@+id/Prod_Price2"
@@ -52,11 +76,24 @@
         app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
 
     <TextView
+        android:id="@+id/Shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="60dp"
+        android:text="Shop/Store: "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/FromShop2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Prod_Name2"
+        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+
+    <TextView
         android:id="@+id/FromShop2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="40dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/Prod_Name2"
         app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
