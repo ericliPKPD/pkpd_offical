@@ -25,7 +25,7 @@ public  class searchPage extends AppCompatActivity {
             DatabaseAdapter helper;
             SimpleCursorAdapter Adapter;
             String search_key="NAME";
-            int i=0;
+            int i=1;
             int userChoice;
 
         public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public  class searchPage extends AppCompatActivity {
                 lvContact = findViewById(R.id.listView);
                 Adapter = databasemangaer.populateListViewFromDB();
                 lvContact.setAdapter(Adapter);
+
 
                 }
 
@@ -80,8 +81,8 @@ public  class searchPage extends AppCompatActivity {
                         SQLiteDatabase DB = helper.getWritableDatabase();
                         Cursor cursor = null;
                         String querySql= null;
-                        if(i==0) {
-                                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME ASC";
+                        if(i==0) {querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME ASC";
+
                                 i=1;
                                 Toast.makeText(searchPage.this, "Ascending order", Toast.LENGTH_SHORT).show();
                         }
@@ -100,7 +101,7 @@ public  class searchPage extends AppCompatActivity {
         filter.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(@NonNull MenuItem item) {
-                final String[] items = { "Product name","Shop","Qutoe","Price" };
+                final String[] items = { "Product name","Shop","Stock","Price" };
                         userChoice = -1;
                         AlertDialog.Builder singleChoiceDialog =
                         new AlertDialog.Builder(searchPage.this);
@@ -168,18 +169,29 @@ public  class searchPage extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                 // Move the cursor to the position of the clicked item
+                                SQLiteDatabase DB = helper.getWritableDatabase();
                                 Cursor cursor = (Cursor) Adapter.getItem(position);
+                                String name = cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_NAME));
+                                String querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " WHERE " + DatabaseAdapter.COLUMN_NAME + " = '" + name + "';";
+                                cursor = DB.rawQuery(querySql, null);
+                                cursor.moveToFirst();
                                 if (getIntent().getIntExtra("com", 0) == 1){
                                         Intent result = new Intent();
                                         result.putExtra("Product Name", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_NAME)));
+                                        result.putExtra("Product des", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_DES)));
+                                        result.putExtra("Product discount", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_DIS)));
                                         result.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
+                                        result.putExtra("Product Stock", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Stock)));
                                         result.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
                                         setResult(RESULT_OK, result);
                                         finish();
                                 } else {
                                         Intent intent = new Intent(searchPage.this, ProductDetil.class);
+                                        intent.putExtra("Product des", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_DES)));
+                                        intent.putExtra("Product discount", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_DIS)));
                                         intent.putExtra("Product Name", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_NAME)));
                                         intent.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
+                                        intent.putExtra("Product Stock", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Stock)));
                                         intent.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
                                         startActivity(intent);
                                 }

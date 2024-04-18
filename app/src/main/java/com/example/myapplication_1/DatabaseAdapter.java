@@ -20,13 +20,18 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     static final String COLUMN_PRICE = "PRICE";
     static final String COLUMN_FROMSHOP = "FROM_SHOP";
 
+    static final String COLUMN_DES = "Des";
+    static final String COLUMN_DIS ="Discount";
+
     static final String COLUMN_Stock = "Stock";
     private static final String CREAT_QUERY = "CREATE TABLE " + TABLE_NAME+
             " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_NAME + " TEXT, "
             + COLUMN_PRICE + " DOUBLE, "
             + COLUMN_FROMSHOP + " TEXT,"
-            + COLUMN_Stock + " INTEGER);";
+            + COLUMN_Stock + " INTEGER,"
+            + COLUMN_DES + " TEXT,"
+            + COLUMN_DIS + " TEXT);";
 
 
     public DatabaseAdapter(@Nullable Context context) {
@@ -49,7 +54,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
     }
 
-    public void add_in(String pname, int pprice, String fromshop, int pstock) {
+    public void add_in(String pname, int pprice, String fromshop, int pstock, String pdes, String pdiscount) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -57,6 +62,18 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         cv.put(COLUMN_PRICE, pprice);
         cv.put(COLUMN_FROMSHOP, fromshop);
         cv.put(COLUMN_Stock, pstock);
+        if(pdes.isEmpty()){
+            cv.put(COLUMN_DES, "No depiction");
+        }
+        else{
+            cv.put(COLUMN_DES,pdes);
+        }
+        if(pdiscount.isEmpty()){
+            cv.put(COLUMN_DIS, "No discount");
+        }
+        else{
+            cv.put(COLUMN_DIS,pdiscount);
+        }
 
         db.insert(TABLE_NAME, null, cv);
 

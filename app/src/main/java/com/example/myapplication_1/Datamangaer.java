@@ -18,12 +18,12 @@ public class Datamangaer {
     }
 
     public SimpleCursorAdapter populateListViewFromDB(){
-        String columns[] = {DatabaseAdapter.COLUMN_ID, DatabaseAdapter.COLUMN_NAME, DatabaseAdapter.COLUMN_PRICE,DatabaseAdapter.COLUMN_FROMSHOP,DatabaseAdapter.COLUMN_Stock};
+        String columns[] = {DatabaseAdapter.COLUMN_ID,DatabaseAdapter.COLUMN_NAME, DatabaseAdapter.COLUMN_PRICE,DatabaseAdapter.COLUMN_FROMSHOP,DatabaseAdapter.COLUMN_Stock};
         Cursor cursor = db.query(DatabaseAdapter.TABLE_NAME, columns,null, null,null, null, null, null);
         String[] fromFieldNames = new String[]{
-                DatabaseAdapter.COLUMN_ID, DatabaseAdapter.COLUMN_NAME, DatabaseAdapter.COLUMN_PRICE,DatabaseAdapter.COLUMN_FROMSHOP,DatabaseAdapter.COLUMN_Stock
+                DatabaseAdapter.COLUMN_ID,DatabaseAdapter.COLUMN_NAME, DatabaseAdapter.COLUMN_PRICE,DatabaseAdapter.COLUMN_FROMSHOP,DatabaseAdapter.COLUMN_Stock
         };
-        int[] toViewIDs = new int[]{R.id.item_id, R.id.item_product, R.id.item_price,R.id.item_shop,R.id.item_stock};
+        int[] toViewIDs = new int[]{R.id.item_pid,R.id.item_product, R.id.item_price,R.id.item_shop,R.id.item_stock};
         SimpleCursorAdapter contactAdapter = new SimpleCursorAdapter(
                 context,
                 R.layout.single_items,

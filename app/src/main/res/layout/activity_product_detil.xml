@@ -31,91 +31,161 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/Prod_Name"
-        android:layout_width="296dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="70dp"
-        android:text="Product Name:"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:text="Name:"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Prod_Name2"
-        android:layout_width="296dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/Name"
+        app:layout_constraintTop_toTopOf="@+id/Name" />
 
     <TextView
-        android:id="@+id/price"
+        android:id="@+id/Price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="60dp"
-        android:text="Price: "
-        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:text="Price:"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text=" $ "
+        android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/Prod_Price2"
-        app:layout_constraintStart_toStartOf="@+id/Prod_Name2"
-        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Price"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <TextView
         android:id="@+id/Prod_Price2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="24dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/Prod_Name2"
-        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/Price"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
 
     <TextView
         android:id="@+id/Shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-10dp"
-        android:layout_marginTop="60dp"
-        android:text="Shop/Store: "
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/FromShop2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Prod_Name2"
-        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Shop:"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Price" />
+
 
     <TextView
         android:id="@+id/FromShop2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/Shop"
+        app:layout_constraintTop_toBottomOf="@+id/Price" />
+
+    <TextView
+        android:id="@+id/Stock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:text="Stock:"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/FromShop2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Depication"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Shop" />
+
+    <TextView
+        android:id="@+id/Depiction"
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/Prod_Name2"
-        app:layout_constraintTop_toBottomOf="@+id/Prod_Name2" />
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="124dp"
+        android:text="Discount:"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/discount"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/Stock"
+        app:layout_constraintTop_toTopOf="@+id/Stock" />
 
     <RelativeLayout
         android:id="@+id/Add_view"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_width="408dp"
+        android:layout_height="506dp"
+        android:layout_marginEnd="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/bottomNavigationView"
-        app:layout_constraintTop_toBottomOf="@+id/FromShop2">
+        app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/Add"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="297dp"
-            android:layout_marginBottom="420dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="296dp"
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />
@@ -127,9 +197,9 @@
             android:layout_alignStart="@+id/Add"
             android:layout_alignEnd="@+id/Add"
             android:layout_alignBottom="@+id/Add"
-            android:layout_marginStart="87dp"
-            android:layout_marginEnd="-225dp"
-            android:layout_marginBottom="3dp"
+            android:layout_marginStart="83dp"
+            android:layout_marginEnd="-221dp"
+            android:layout_marginBottom="6dp"
             android:text="Compare more with other products..."
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -138,9 +208,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_item"
             android:layout_width="match_parent"
-            android:layout_height="364dp"
+            android:layout_height="377dp"
             android:layout_below="@+id/textView2"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="30dp"
             android:foregroundGravity="center_vertical"
             android:paddingTop="?attr/actionBarSize" />
 

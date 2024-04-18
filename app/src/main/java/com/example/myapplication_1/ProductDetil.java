@@ -32,20 +32,30 @@ public class ProductDetil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detil);
 
-        String ID = getIntent().getStringExtra("Product ID");
+
         String Name = getIntent().getStringExtra("Product Name");
         String Price = getIntent().getStringExtra("Product Price");
         String From_Shop = getIntent().getStringExtra("Product From Shop");
+        String stock= getIntent().getStringExtra("Product Stock");
+        String des= getIntent().getStringExtra("Product discount");
+        String discount = getIntent().getStringExtra("Product des");
+
 
         oriPrice = Double.parseDouble(Price);
 
         TextView tx_name = findViewById(R.id.Prod_Name2);
         TextView tx_price = findViewById(R.id.Prod_Price2);
         TextView tx_fromshop = findViewById(R.id.FromShop2);
+        TextView tx_Des = findViewById(R.id.Depiction);
+        TextView tx_stock = findViewById(R.id.stock);
+        TextView tx_Dis = findViewById(R.id.discount);
 
         tx_name.setText(Name);
         tx_price.setText(Price);
         tx_fromshop.setText(From_Shop);
+        tx_stock.setText(stock);
+        tx_Dis.setText(des);
+        tx_Des.setText(discount);
 
         recyclerView = findViewById(R.id.list_item);
         add_button = findViewById(R.id.Add);

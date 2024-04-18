@@ -30,18 +30,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/Prod_Price"
-                android:layout_width="96dp"
-                android:layout_height="28dp"
-                android:text="Price"
+                android:id="@+id/textView"
+                android:layout_width="38dp"
+                android:layout_height="29dp"
+                android:text="Price:"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/Prod_Name"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Name"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
+                android:id="@+id/Prod_Price"
+                android:layout_width="67dp"
+                android:layout_height="28dp"
+                android:text="Price"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView" />
+
+            <TextView
                 android:id="@+id/FromShop"
-                android:layout_width="61dp"
+                android:layout_width="80dp"
                 android:layout_height="28dp"
                 android:text="Shop"
                 app:layout_constraintEnd_toEndOf="@+id/Prod_Name"
@@ -49,10 +57,10 @@
 
             <TextView
                 android:id="@+id/Prod_Id"
-                android:layout_width="31dp"
-                android:layout_height="28dp"
-                android:text="ID"
-                android:textColor="#d3d3d3"
+                android:layout_width="37dp"
+                android:layout_height="29dp"
+                android:text="Shop:"
+
                 app:layout_constraintEnd_toStartOf="@+id/FromShop"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Name" />
 
@@ -66,7 +74,7 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="115dp"
+                android:layout_width="81dp"
                 android:layout_height="28dp"
                 android:text="Different"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
