@@ -88,7 +88,7 @@
                     android:layout_toEndOf="@+id/NightModeIcon"
                     android:text="Night Mode"
                     android:textColor="@color/black"
-                    android:textSize="17dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <!--setup night mode switch-->
@@ -128,7 +128,7 @@
                     android:layout_toEndOf="@+id/NotificationIcon"
                     android:text="Notification"
                     android:textColor="@color/black"
-                    android:textSize="17dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <!--setup notification switch-->
