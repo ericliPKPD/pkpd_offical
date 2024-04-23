@@ -17,7 +17,7 @@ import android.widget.Toast;
 
         EditText name, price, fromshop, stock,depiction,discount;
         Button addbutton;
-        Button btw_button;
+        Button btw_button,jump;
 
         @SuppressLint("MissingInflatedId")
         @Override
@@ -32,8 +32,10 @@ import android.widget.Toast;
             depiction = findViewById(R.id.add_depiction);
             discount = findViewById(R.id.add_discount);
 
+
             btw_button = (Button) findViewById(R.id.cancel_button);
             addbutton = findViewById(R.id.addindb2);
+            jump=findViewById(R.id.updatepage);
             addbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -59,6 +61,15 @@ import android.widget.Toast;
                 public void onClick(View v) {
                     Intent back = new Intent(search_addpage.this, searchPage.class);
                     startActivity(back);
+                }
+            });
+
+
+            jump.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent jump = new Intent(search_addpage.this,Update_page.class);
+                    startActivity(jump);
                 }
             });
         }

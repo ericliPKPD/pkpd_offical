@@ -62,8 +62,8 @@
 
             <ImageView
                 android:id="@+id/Ad_image"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:layout_width="373dp"
+                android:layout_height="103dp"
                 app:layout_constraintStart_toStartOf="@+id/Prod_Price"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Price" />
         </androidx.constraintlayout.widget.ConstraintLayout>

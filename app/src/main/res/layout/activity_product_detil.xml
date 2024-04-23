@@ -168,15 +168,29 @@
         app:layout_constraintStart_toEndOf="@+id/Stock"
         app:layout_constraintTop_toTopOf="@+id/Stock" />
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="422dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="232dp"
+        android:background="@color/white"
+        android:elevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass" />
+
     <RelativeLayout
         android:id="@+id/Add_view"
-        android:layout_width="408dp"
-        android:layout_height="506dp"
+        android:layout_width="405dp"
+        android:layout_height="347dp"
         android:layout_marginEnd="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/bottomNavigationView">
+        app:layout_constraintStart_toStartOf="@id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/reportingChart">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/Add"
@@ -184,8 +198,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="37dp"
-            android:layout_marginEnd="296dp"
+            android:layout_marginTop="114dp"
+            android:layout_marginEnd="341dp"
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />
@@ -205,14 +219,17 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_item"
             android:layout_width="match_parent"
-            android:layout_height="377dp"
+            android:layout_height="215dp"
             android:layout_below="@+id/textView2"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="-55dp"
             android:foregroundGravity="center_vertical"
             android:paddingTop="?attr/actionBarSize" />
+
+
 
     </RelativeLayout>
 

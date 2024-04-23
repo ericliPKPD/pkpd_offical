@@ -23,11 +23,17 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
     static final String COLUMN_DES = "Des";
     static final String COLUMN_DIS ="Discount";
 
+    static final String COLUMN_Friprice = "First_price";
+
+    static final String COLUMN_Secprice = "sec_price";
+
     static final String COLUMN_Stock = "Stock";
     private static final String CREAT_QUERY = "CREATE TABLE " + TABLE_NAME+
             " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_NAME + " TEXT, "
             + COLUMN_PRICE + " DOUBLE, "
+            + COLUMN_Friprice + " DOUBLE, "
+            + COLUMN_Secprice + " DOUBLE, "
             + COLUMN_FROMSHOP + " TEXT,"
             + COLUMN_Stock + " INTEGER,"
             + COLUMN_DES + " TEXT,"
@@ -60,6 +66,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
         cv.put(COLUMN_NAME, pname);
         cv.put(COLUMN_PRICE, pprice);
+        cv.put(COLUMN_Secprice, pprice);
+        cv.put(COLUMN_Friprice, pprice);
         cv.put(COLUMN_FROMSHOP, fromshop);
         cv.put(COLUMN_Stock, pstock);
         if(pdes.isEmpty()){
@@ -78,7 +86,24 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, cv);
 
     }
-
+    public void update_price(String pname, String fromshop, int pprice){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        String querySql = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_NAME + " = '" + pname + "';";
+        cursor = db.rawQuery(querySql, null);
+        cursor.moveToFirst();
+        String lprice = cursor.getString(cursor.getColumnIndex(COLUMN_PRICE));
+        String sprice = cursor.getString(cursor.getColumnIndex(COLUMN_Secprice));
+        if(Integer.valueOf(sprice)!=0){
+            cv.put(COLUMN_Friprice, sprice);
+            cv.put(COLUMN_Secprice, lprice);
+        }
+        else{
+            cv.put(COLUMN_Secprice, lprice);
+        }
+        cv.put(COLUMN_PRICE, pprice);
+        db.update(TABLE_NAME, cv,COLUMN_NAME + " = '" + pname + "';", null);
+    }
 
 
 }

@@ -5,16 +5,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.health.connect.datatypes.units.Length;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ProductDetil extends AppCompatActivity {
     
@@ -26,6 +38,12 @@ public class ProductDetil extends AppCompatActivity {
     ArrayList<Double> diff;
     ComparsionAdapter comparsionAdapter;
     double oriPrice;
+    LineChart chart;
+    int yAxish;
+
+    Button favour;
+
+    List<String> xValues;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +57,9 @@ public class ProductDetil extends AppCompatActivity {
         String stock= getIntent().getStringExtra("Product Stock");
         String des= getIntent().getStringExtra("Product discount");
         String discount = getIntent().getStringExtra("Product des");
-
+        int secprice = Integer.parseInt(getIntent().getStringExtra("Product SecPrice"));
+        int friprice = Integer.parseInt(getIntent().getStringExtra("Product FriPrice"));
+        int price2 = Integer.parseInt(Price);
 
         oriPrice = Double.parseDouble(Price);
 
@@ -49,6 +69,8 @@ public class ProductDetil extends AppCompatActivity {
         TextView tx_Des = findViewById(R.id.Depiction);
         TextView tx_stock = findViewById(R.id.stock);
         TextView tx_Dis = findViewById(R.id.discount);
+        chart=findViewById(R.id.lineChart);
+
 
         tx_name.setText(Name);
         tx_price.setText(Price);
@@ -90,6 +112,46 @@ public class ProductDetil extends AppCompatActivity {
             }
         });
 
+
+    //line chart
+        Description description= new Description();
+        description.setText("Flow of price");
+        description.setPosition(150f,15f);
+        chart.setDescription(description);
+        chart.getAxisRight().setDrawLabels(false);
+        xValues  = Arrays.asList("0","2 week ago","last week","latest");
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues));
+        xAxis.setLabelCount(3);
+        xAxis.setGranularity(1f);
+
+        int yAxish=price2+5;
+
+
+        YAxis yAxis = chart.getAxisLeft();
+        yAxis.setAxisMinimum(0f);
+        yAxis.setAxisMaximum(yAxish);
+        yAxis.setAxisLineWidth(2f);
+        yAxis.setAxisLineColor(Color.BLACK);
+        yAxis.setLabelCount(3);
+
+        List<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(0,0));
+        entries.add(new Entry(1,friprice));
+        entries.add(new Entry(2,secprice));
+        entries.add(new Entry(3,price2));
+
+        LineDataSet dataSet=new LineDataSet(entries, "Price");
+        dataSet.setColor(Color.RED);
+
+
+        LineData lineData = new LineData(dataSet);
+        chart.setData(lineData);
+        chart.invalidate();
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -110,8 +172,11 @@ public class ProductDetil extends AppCompatActivity {
 
                 comparsionAdapter.notifyDataSetChanged();
 
+
                 Toast.makeText(ProductDetil.this, "Product added successfully", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
+
 }

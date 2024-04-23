@@ -36,6 +36,8 @@
             android:id="@+id/list_item"
             android:layout_width="match_parent"
             android:layout_height="750dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
             android:foregroundGravity="center_vertical"
             android:paddingTop="?attr/actionBarSize" />
 
@@ -45,8 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="218dp"
             android:clickable="true"
             android:contentDescription="@android:string/copy"
             app:srcCompat="@android:drawable/ic_input_add" />

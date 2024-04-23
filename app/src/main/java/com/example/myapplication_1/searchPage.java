@@ -183,6 +183,8 @@ public  class searchPage extends AppCompatActivity {
                                         result.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
                                         result.putExtra("Product Stock", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Stock)));
                                         result.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
+                                        result.putExtra("Product SecPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Secprice)));
+                                        result.putExtra("Product FriPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Friprice)));
                                         setResult(RESULT_OK, result);
                                         finish();
                                 } else {
@@ -193,6 +195,9 @@ public  class searchPage extends AppCompatActivity {
                                         intent.putExtra("Product Price", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_PRICE)));
                                         intent.putExtra("Product Stock", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Stock)));
                                         intent.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
+                                        intent.putExtra("Product SecPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Secprice)));
+                                        intent.putExtra("Product FriPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Friprice)));
+
                                         startActivity(intent);
                                 }
                         }

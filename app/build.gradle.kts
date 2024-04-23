@@ -43,4 +43,6 @@ dependencies {
     //Glide for image show
     implementation("com.github.bumptech.glide:glide:4.14.2")
     annotationProcessor("com.github.bumptech.glide:glide:4.14.2")
+    //line chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

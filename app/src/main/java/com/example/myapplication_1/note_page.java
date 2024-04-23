@@ -18,8 +18,12 @@ public class note_page extends AppCompatActivity implements SelectListener {
 
     RecyclerView recyclerView;
     DbOperation dbOperation;
+
+
     ArrayList<String> pid, pname, pprice, pfromshop;
+
     ProductAdapter productAdapter;
+
     Button btn1;
     Button btn2;
 
@@ -31,6 +35,7 @@ public class note_page extends AppCompatActivity implements SelectListener {
         btn1 = (Button) findViewById(R.id.settings);
         btn2 = (Button) findViewById(R.id.home);
         recyclerView = findViewById(R.id.list_item);
+
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,12 +56,15 @@ public class note_page extends AppCompatActivity implements SelectListener {
         });
 
         dbOperation = new DbOperation(note_page.this);
+
         pid = new ArrayList<>();
         pname = new ArrayList<>();
         pprice = new ArrayList<>();
         pfromshop = new ArrayList<>();
 
+
         getdatainarray();
+
 
         productAdapter = new ProductAdapter(note_page.this, pid, pname, pprice, pfromshop,this);
         recyclerView.setAdapter(productAdapter);
@@ -73,6 +81,7 @@ public class note_page extends AppCompatActivity implements SelectListener {
             pfromshop.add(cursor.getString(3));
         }
     }
+
 
     @Override
     public void onItemClick(int position) {

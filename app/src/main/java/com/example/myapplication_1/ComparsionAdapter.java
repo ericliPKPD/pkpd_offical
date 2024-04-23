@@ -34,6 +34,7 @@ public class ComparsionAdapter extends RecyclerView.Adapter<ComparsionAdapter.Co
         return new ComparsionViewHolder(v);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ComparsionViewHolder holder, int position) {
         holder.tx_name.setText(String.valueOf(pname.get(position)));
@@ -58,6 +59,7 @@ public class ComparsionAdapter extends RecyclerView.Adapter<ComparsionAdapter.Co
     public static class ComparsionViewHolder extends RecyclerView.ViewHolder {
         TextView tx_name, tx_price, tx_fromshop, tx_diff;
         ImageView imageView;
+
 
         public ComparsionViewHolder(View itemView) {
             super(itemView);
