@@ -39,7 +39,7 @@ public class ProductDetil extends AppCompatActivity {
     ComparsionAdapter comparsionAdapter;
     double oriPrice;
     LineChart chart;
-    int yAxish;
+    int yAxish,friprice,secprice;
 
     Button favour;
 
@@ -57,8 +57,12 @@ public class ProductDetil extends AppCompatActivity {
         String stock= getIntent().getStringExtra("Product Stock");
         String des= getIntent().getStringExtra("Product discount");
         String discount = getIntent().getStringExtra("Product des");
-        int secprice = Integer.parseInt(getIntent().getStringExtra("Product SecPrice"));
-        int friprice = Integer.parseInt(getIntent().getStringExtra("Product FriPrice"));
+        String i =  getIntent().getStringExtra("Search calling");
+        if(i=="1") {
+            secprice = Integer.parseInt(getIntent().getStringExtra("Product SecPrice"));
+            friprice = Integer.parseInt(getIntent().getStringExtra("Product FriPrice"));
+
+        }
         int price2 = Integer.parseInt(Price);
 
         oriPrice = Double.parseDouble(Price);
@@ -75,9 +79,17 @@ public class ProductDetil extends AppCompatActivity {
         tx_name.setText(Name);
         tx_price.setText(Price);
         tx_fromshop.setText(From_Shop);
-        tx_stock.setText(stock);
-        tx_Dis.setText(des);
-        tx_Des.setText(discount);
+        if(stock==null&&des==null&&discount==null){
+            tx_stock.setText("null");
+            tx_Dis.setText("null");
+            tx_Des.setText("null");
+
+        }
+        else{tx_stock.setText(stock);
+            tx_Dis.setText(des);
+            tx_Des.setText(discount);
+
+        }
 
         recyclerView = findViewById(R.id.list_item);
         add_button = findViewById(R.id.Add);
