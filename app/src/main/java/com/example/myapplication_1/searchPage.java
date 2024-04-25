@@ -81,13 +81,13 @@ public  class searchPage extends AppCompatActivity {
                         SQLiteDatabase DB = helper.getWritableDatabase();
                         Cursor cursor = null;
                         String querySql= null;
-                        if(i==0) {querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME ASC";
+                        if(i==0) {querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME COLLATE NOCASE ASC";
 
                                 i=1;
                                 Toast.makeText(searchPage.this, "Ascending order", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME DESC";
+                                querySql = "SELECT * FROM " + DatabaseAdapter.TABLE_NAME + " ORDER BY NAME COLLATE NOCASE DESC";
                                 Toast.makeText(searchPage.this, "Descending order", Toast.LENGTH_SHORT).show();
                                 i=0;
                         }
@@ -198,7 +198,7 @@ public  class searchPage extends AppCompatActivity {
                                         intent.putExtra("Product From Shop", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_FROMSHOP)));
                                         intent.putExtra("Product SecPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Secprice)));
                                         intent.putExtra("Product FriPrice", cursor.getString(cursor.getColumnIndex(DatabaseAdapter.COLUMN_Friprice)));
-                                        intent.putExtra("Search calling",1);
+                                        intent.putExtra("Search calling","1");
 
                                         startActivity(intent);
                                 }

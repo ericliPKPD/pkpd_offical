@@ -27,6 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class ProductDetil extends AppCompatActivity {
     
@@ -58,10 +59,9 @@ public class ProductDetil extends AppCompatActivity {
         String des= getIntent().getStringExtra("Product discount");
         String discount = getIntent().getStringExtra("Product des");
         String i =  getIntent().getStringExtra("Search calling");
-        if(i=="1") {
+        if(Objects.equals(i, "1")) {
             secprice = Integer.parseInt(getIntent().getStringExtra("Product SecPrice"));
             friprice = Integer.parseInt(getIntent().getStringExtra("Product FriPrice"));
-
         }
         int price2 = Integer.parseInt(Price);
 
