@@ -33,9 +33,11 @@
 
             <TextView
                 android:id="@+id/Prod_Price"
-                android:layout_width="248dp"
+                android:layout_width="228dp"
                 android:layout_height="28dp"
+                android:layout_marginStart="20dp"
                 android:text="Price"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/Prod_Name"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Name"
@@ -46,6 +48,7 @@
                 android:layout_width="61dp"
                 android:layout_height="28dp"
                 android:text="Shop"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/Prod_Name"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Name" />
 
@@ -56,8 +59,17 @@
                 android:text="ID"
                 android:textColor="#d3d3d3"
                 app:layout_constraintEnd_toStartOf="@+id/FromShop"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/Prod_Price"
+                app:layout_constraintTop_toBottomOf="@+id/Prod_Name" />
+
+            <TextView
+                android:id="@+id/dollarsign_note"
+                android:layout_width="20dp"
+                android:layout_height="28dp"
+                android:text="$"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="@+id/Prod_Name"
                 app:layout_constraintTop_toBottomOf="@+id/Prod_Name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
